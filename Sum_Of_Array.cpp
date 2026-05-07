@@ -4,10 +4,10 @@
 #include<iomanip>
 #include<algorithm>
 
-using namespace std ;
-const int  SIZE = 3 ;
-const int  from = 0 ;
-const int  to   = 10;
+using namespace std  ;
+const int  SIZE = 3  ;
+const int  from = 0  ;
+const int  to   = 10 ;
 
 int Random_numbers(int from, int to)
 {
@@ -40,17 +40,18 @@ void Print_Array(int arr[SIZE][SIZE],string message)
 	}
 }
 
-void Print_Multiply_Array(int arr1[SIZE][SIZE], int arr2[SIZE][SIZE],string message)
+void Print_Sum_Of_Array(int arr[SIZE][SIZE],string message)
 {
-	cout << endl << message << endl;
+	cout << endl << message;
+	long long Sum = 0;
 	for (int i = 0;i < SIZE;i++)
 	{
 		for (int j = 0;j < SIZE;j++)
 		{
-			cout << setw(5) << arr1[i][j] * arr2[i][j]<<" ";
+			Sum += arr[i][j];
 		}
-		cout << endl;
 	}
+		cout << Sum;
 }
 
 
@@ -58,18 +59,14 @@ void Print_Multiply_Array(int arr1[SIZE][SIZE], int arr2[SIZE][SIZE],string mess
 int main()
 {
 	srand((unsigned)time(NULL));
-	int arr1[SIZE][SIZE], arr2[SIZE][SIZE], Multiply_Array[SIZE][SIZE];
+	int arr[SIZE][SIZE],  SumArray[SIZE][SIZE];
 
 
-	Fill_Array(arr1);
-	Print_Array(arr1, "-------- Array 1 -------- \n");
+	Fill_Array(arr);
+	Print_Array(arr, "--------> Array 1 <-------- \n");
 
-
-	Fill_Array(arr2);
-	Print_Array(arr2, "-------- Array 2 -------- \n");
-
+	cout << "\n=========================";
+	Print_Sum_Of_Array(arr, " Sum The Array: ");
 	cout << "\n=========================" << endl;
-	Print_Multiply_Array(arr1, arr2, " Multiplied The Arrays :\n");
-
 	return 0;
 }
