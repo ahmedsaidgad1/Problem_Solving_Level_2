@@ -1,3 +1,4 @@
+// program to print the first letter in each word of a string
 #include <iostream>
 #include <string>
 using namespace std;
@@ -14,16 +15,14 @@ void Print_first_letter(string str)
 {
 	for (int i = 0; i < str.length(); i++)
 	{
-		if (i == 0 || str[i] == ' ')
+		if (i == 0 || str[i - 1] == ' ')
 		{
-			cout << str[i+1] << " ";
+			cout << str[i] << " ";
 		}
 	}
 }
-
-int main()
-{
-	string str = Read_string();
+ int main()
+{	string str = Read_string();
 	Print_first_letter(str);
 	return 0;
 }
